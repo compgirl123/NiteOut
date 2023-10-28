@@ -12,6 +12,8 @@
   width: 80%; /* Set the width to 80% of the viewport width */
   height: 70vh; /* Set the height to 70% of the viewport height */
   max-width: 60%; /* Adjust the maximum width as needed */
+  display: flex;
+  flex-direction: row;
 }
 
 .toDo {
@@ -39,6 +41,7 @@
   margin-left: auto; /* Add space between the "edit" and "delete" icons*/
 }
 
+
 @media (max-width: 800px) {
   .toDoWrapper {
     background: #FF5349;
@@ -52,6 +55,8 @@
     width: 100%; /* Set the width to 80% of the viewport width */
     height: 70vh; /* Set the height to 70% of the viewport height */
     max-width: 95%; /* Adjust the maximum width as needed */
+    display: flex;
+    flex-direction: column;
   }
 }
 
