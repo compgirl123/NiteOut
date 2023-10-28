@@ -8,4 +8,5 @@ export const Button1 = styled.button`
   border-radius: 10px;
   border: none;
   flex: 1;
+  width: 100%; /* Use 100% to fill the width of its container */
 `;
