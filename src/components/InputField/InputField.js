@@ -1,6 +1,4 @@
-import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { InputIcon } from './InputField.style.js';
+import React from 'react';
 
 /**
  * InputField Component
@@ -9,7 +7,7 @@ import { InputIcon } from './InputField.style.js';
  */
 export const InputField = (props) => {
 
-  const {id, type, placeholder, onChange, value, label, icon} = props;
+  const {id, type, placeholder, onChange, value} = props;
 
   return (
     <>

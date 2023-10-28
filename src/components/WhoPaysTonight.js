@@ -5,11 +5,9 @@ import { v4 as uuidv4 } from 'uuid';
 import { InputField } from './InputField/InputField';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
-import { AlignVerticalCenter } from '@mui/icons-material';
 
 const WhoPaysTonight = () => {
   const [todos, setTodos] = useState([]);
-  const [warning, setWarning] = useState(false);
   const [value, setValue] = useState('');
 
   useEffect(() => {
