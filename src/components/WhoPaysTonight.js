@@ -19,9 +19,8 @@ const WhoPaysTonight = () => {
     alert(todo);
     if (todo) {
       setTodos([...todos, { id: uuidv4(), task: todo }]);
-      setWarning(false);
     } else {
-      setWarning(true);
+      console.log("err");
     }
   };
 
