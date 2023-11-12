@@ -44,6 +44,11 @@ const WhoPaysTonight = () => {
     }
   }
 
+  const handleReset = () => {
+    setTodos([]);
+    setChosenPerson('');
+  }
+
   return (
     <>
       <ThemeWrapper>
@@ -77,7 +82,10 @@ const WhoPaysTonight = () => {
           </Button>
           }
           <br/>
-          <h2 style={{ textAlign: 'center'}}>{chosenPerson ? 'Chosen Person: ' + chosenPerson.task : ''}</h2>
+          <h3 style={{ textAlign: 'center'}}>{chosenPerson ? 'Chosen Person: ' + chosenPerson.task : ''}</h3>
+          {chosenPerson && <Button type="submit" className="todo-btn" onClick={handleReset}>
+            Reset
+          </Button>}
         </div>
       </ThemeWrapper>
     </>
