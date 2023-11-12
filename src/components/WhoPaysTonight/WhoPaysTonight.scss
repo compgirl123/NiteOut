@@ -9,6 +9,10 @@
   margin-top: 1rem;
 }
 
+.icon-container {
+  margin-left: auto; /* Push the icons to the right, aligning with the right edge */
+}
+
 .input-container {
   flex: 3;
 }
@@ -21,6 +25,7 @@
 }
 
 .deleteIcon {
+  padding-left: 20px;
   margin-left: auto;
 }
 
@@ -46,10 +51,3 @@
   align-items: center;
   width: 100%;
 }
-
-
-
-
-
-
-

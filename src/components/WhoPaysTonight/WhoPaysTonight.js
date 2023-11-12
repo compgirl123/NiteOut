@@ -4,12 +4,14 @@ import './WhoPaysTonight.scss';
 import { v4 as uuidv4 } from 'uuid';
 import { InputField } from '../InputField/InputField';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faTrash, faPencil} from '@fortawesome/free-solid-svg-icons';
 import { ThemeWrapper } from '../ThemeWrapper/ThemeWrapper';
 
 const WhoPaysTonight = () => {
   const [todos, setTodos] = useState([]);
+  const [editingIndex, setEditingIndex] = useState(null);
   const [value, setValue] = useState('');
+  const [newValue, setNewValue] = useState('');
   const [chosenPerson, setChosenPerson] = useState(null);
 
   useEffect(() => {
@@ -32,6 +34,19 @@ const WhoPaysTonight = () => {
 
   const deleteToDo = (id) => {
     setTodos(todos.filter(todo => todo.id !== id));
+  }
+
+  const editToDo = (index) => {
+    //setEditing(true);
+    setEditingIndex(index);
+    setNewValue(todos[index].task);
+  }
+
+  const saveEditToDo = (index) => {
+    setEditingIndex(null);
+    const updatedTodos = [...todos];
+    updatedTodos[index] = { ...updatedTodos[index], task: newValue };
+    setTodos(updatedTodos);
   }
 
   const handleWhoPays = () => {
@@ -70,8 +85,28 @@ const WhoPaysTonight = () => {
           <div className="partOne">
           {todos.length > 0 && todos.map((todo, index) => (
             <div className="toDo" key={todo.id}>
-              <p>{todo.task}</p>
-              <FontAwesomeIcon className="deleteIcon" icon={faTrash} onClick={() => deleteToDo(todo.id)} />
+              {editingIndex === index?
+                <>
+                  <InputField
+                    type="text"
+                    onChange={(e) => setNewValue(e.target.value)}
+                    value={newValue}
+                  />
+                  <div className="icon-container">
+                    <Button type="submit" className="todo-btn" onClick = {(e)=> saveEditToDo(e)}>
+                      Save
+                    </Button>
+                  </div>
+                </>
+                :
+                <>
+                <p>{todo.task}</p>
+                <div className="icon-container">
+                  <FontAwesomeIcon className="deleteIcon" icon={faPencil} onClick={() => editToDo(index)} />
+                  <FontAwesomeIcon className="deleteIcon" icon={faTrash} onClick={() => deleteToDo(index)} />
+                </div>
+                </>
+              }
             </div>
           ))}
         </div>
