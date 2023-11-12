@@ -46,7 +46,6 @@ const WhoPaysTonight = () => {
 
   return (
     <>
-      {/*<div className="toDoWrapper">*/}
       <ThemeWrapper>
           <form className="todoform" onSubmit={handleSubmit}>
             <div className="input-container">
@@ -71,14 +70,15 @@ const WhoPaysTonight = () => {
             </div>
           ))}
         </div>
-        <div className="partTwo hidden-part">
+        <div className="partTwo">
+        {todos.length > 1 &&
           <Button type="submit" className="todo-btn" onClick={handleWhoPays}>
             Who Will Pay Tonight?
           </Button>
+          }
           <br/>
           <h2 style={{ textAlign: 'center'}}>{chosenPerson ? 'Chosen Person: ' + chosenPerson.task : ''}</h2>
         </div>
-      {/*</div>*/}
       </ThemeWrapper>
     </>
   );
