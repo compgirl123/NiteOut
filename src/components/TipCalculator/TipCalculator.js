@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TaxCalculatorWidget = () => {
+const TipCalculator = () => {
   return (
     <div>
 

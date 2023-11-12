@@ -1,9 +1,9 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import Home from './components/WhoPaysTonight';
+import Home from './components/WhoPaysTonight/WhoPaysTonight';
 //import TaxCalculatorWidget from './components/TaxCalculatorWidget';
-import WhoPaysTonight from './components/WhoPaysTonight';
+import WhoPaysTonight from './components/WhoPaysTonight/WhoPaysTonight';
 
 function App() {
   return (

@@ -35,9 +35,6 @@ const Navbar = () => {
         {menuOptions.map((item)=>(
           <a href={item.href}>{item.text}</a>
         ))}
-        {/*<a href="">Home</a>
-        <a href="">Tax Calculator</a>
-        <a href="">Who Pays Tonight?</a>*/}
       </div>
       <div className="navbar-menu-container">
         <HiOutlineBars3 onClick={() => setOpenMenu(true)} />

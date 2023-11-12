@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from './Button/Button';
+import { Button } from '../Button/Button';
 import './WhoPaysTonight.scss';
 import { v4 as uuidv4 } from 'uuid';
-import { InputField } from './InputField/InputField';
+import { InputField } from '../InputField/InputField';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { ThemeWrapper } from '../ThemeWrapper/ThemeWrapper';
 
 const WhoPaysTonight = () => {
   const [todos, setTodos] = useState([]);
@@ -45,8 +46,8 @@ const WhoPaysTonight = () => {
 
   return (
     <>
-      <div className="toDoWrapper" >
-        <div className="partOne" style={{ width: '50%', border: '1px solid blue' }}>
+      {/*<div className="toDoWrapper">*/}
+      <ThemeWrapper>
           <form className="todoform" onSubmit={handleSubmit}>
             <div className="input-container">
               <InputField
@@ -62,6 +63,7 @@ const WhoPaysTonight = () => {
               </Button>
             </div>
           </form>
+          <div className="partOne">
           {todos.length > 0 && todos.map((todo, index) => (
             <div className="toDo" key={todo.id}>
               <p>{todo.task}</p>
@@ -69,14 +71,15 @@ const WhoPaysTonight = () => {
             </div>
           ))}
         </div>
-        <div className="partTwo hidden-part" style={{ width: '50%', border: '1px solid blue', justifyContent: 'center', height: '100%' }}>
+        <div className="partTwo hidden-part">
           <Button type="submit" className="todo-btn" onClick={handleWhoPays}>
             Who Will Pay Tonight?
           </Button>
           <br/>
           <h2 style={{ textAlign: 'center'}}>{chosenPerson ? 'Chosen Person: ' + chosenPerson.task : ''}</h2>
         </div>
-      </div>
+      {/*</div>*/}
+      </ThemeWrapper>
     </>
   );
 }
